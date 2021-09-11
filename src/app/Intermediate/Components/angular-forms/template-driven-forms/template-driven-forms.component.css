@@ -1,0 +1,12 @@
+.has-danger{
+  border: 1px solid red;
+}
+
+
+.has-success{
+  border: 1px solid green;
+}
+span.text-danger{
+  font-size: 12px;
+  letter-spacing:.5px
+}
