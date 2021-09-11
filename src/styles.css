@@ -1,8 +1,8 @@
-
 body {
   margin: 15px;
   padding: 15px;
 }
+
 .text-center {
   text-align: center
 }
@@ -11,8 +11,10 @@ body {
   width: 75%;
 }
 
-.text-red {
+span.text-danger {
   color: red!important;
+  font-size: 12px;
+  letter-spacing: .5px
 }
 
 .form-group {
@@ -21,9 +23,10 @@ body {
 
 .form-control {
   border-radius: 0px;
-  padding:8px 10px
+  padding: 8px 10px
 }
-.form-control:focus{
-  box-shadow: 0 0 0 0 ;
+
+.form-control:focus {
+  box-shadow: 0 0 0 0;
   border: 1px solid rgb(143, 143, 143);
 }

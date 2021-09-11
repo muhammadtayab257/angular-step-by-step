@@ -97,8 +97,61 @@
   <!-- How to use FormBuilder -->
   <h4 class="mt-4">How to use FormBuilder</h4>
   <img
-  src="../../../../../assets/Media/Import&Inject-FormBuilderApi.png"
-  alt=""
-  class="img-fluid"
-/>
+    src="../../../../../assets/Media/Import&Inject-FormBuilderApi.png"
+    alt=""
+    class="img-fluid"
+  />
+  <!-- FormGroup Grouping -->
+  <h4 class="mt-4">FormGroup Grouping</h4>
+  <img
+    src="../../../../../assets/Media/Form-group-Grouping.png"
+    alt=""
+    class="img-fluid"
+  />
+
+  <!-- Nested FormGroup -->
+  <h4 class="mt-4">Nested FormGroup</h4>
+  <img
+    src="../../../../../assets/Media/Nested FormGroup.png"
+    alt=""
+    class="img-fluid"
+  />
+
+  <!-- Validations -->
+  <h4 class="mt-4">Validations</h4>
+  <img
+    src="../../../../../assets/Media/Validations.png"
+    alt=""
+    class="img-fluid"
+  />
+
+  <!-- The Final Result -->
+  <h3 class="text-center mt-4">The Final Result</h3>
+
+  <div class="row">
+    <div class="col-md-5">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            formControlName="firstname"
+            class="form-control"
+            placeholder="Name"
+            />
+            <div *ngIf="!f.firstname?.valid && (f.firstname.touched || f.firstname.dirty)">
+              <span class="text-danger"*ngIf="f.firstname.errors?.required">UserName Must Be Filled</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-danger" [disabled]="!userForm.valid">
+            Click Me
+          </button>
+        </div>
+        <b>valid : </b>{{ userForm.valid }}
+      </form>
+    </div>
+  </div>
 </div>
