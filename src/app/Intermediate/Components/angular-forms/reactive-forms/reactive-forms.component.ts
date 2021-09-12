@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
-
+import { MustMatch } from '../../../../Shared/Validators/must-match.validator';
 @Component({
   selector: 'app-reactive-forms',
   templateUrl: './reactive-forms.component.html',
@@ -9,7 +9,8 @@ import { Validators } from '@angular/forms';
 })
 export class ReactiveFormsComponent implements OnInit {
   userForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  submitted = false;
+  constructor(private fb: FormBuilder) { }
 
   onSubmit() {
     console.warn(this.userForm.value);
@@ -34,7 +35,12 @@ export class ReactiveFormsComponent implements OnInit {
           Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
         ],
       ],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required]],
     });
+    {
+      validator: MustMatch('password', 'confirmPassword')
+    }
   }
   // convenience getter for easy access to form fields
   get f() {

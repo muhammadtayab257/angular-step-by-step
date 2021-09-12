@@ -193,7 +193,6 @@
             name="dob"
             formControlName="dob"
             class="form-control"
-            placeholder="Email"
           />
           <div *ngIf="!f.dob?.valid && (f.dob.touched || f.dob.dirty)">
             <span class="text-danger" *ngIf="f.dob.errors?.required"
@@ -205,10 +204,7 @@
         <div class="form-group">
           <input
             [ngClass]="{
-              'is-invalid':
-                f.email.touched &&
-                f.email.errors?.required &&
-                f.email.errors?.pattern,
+              'is-invalid': f.email.touched && f.email.invalid,
               'is-valid': f.email.touched && f.email.valid
             }"
             type="email"
@@ -216,6 +212,7 @@
             name="email"
             formControlName="email"
             class="form-control"
+            placeholder="Email"
           />
           <div *ngIf="!f.email?.valid && (f.email.touched || f.email.dirty)">
             <span class="text-danger" *ngIf="f.email.errors?.required"
@@ -225,6 +222,33 @@
               >Email Must Be Valid</span
             >
           </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            [ngClass]="{
+              'is-invalid': f.password.touched && f.password.invalid,
+              'is-valid': f.password.touched && f.password.valid
+            }"
+            type="password"
+            id="password"
+            name="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter your password"
+          />
+          <span class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="password"
+            id="confirmpassword"
+            name="confirmpassword"
+            formControlName="confirmpassword"
+            class="form-control"
+            placeholder="Confirm Password"
+          />
         </div>
 
         <div class="form-group">
