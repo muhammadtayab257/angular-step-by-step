@@ -10,37 +10,40 @@ import { MustMatch } from '../../../../Shared/Validators/must-match.validator';
 export class ReactiveFormsComponent implements OnInit {
   userForm!: FormGroup;
   submitted = false;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   onSubmit() {
     console.warn(this.userForm.value);
   }
   ngOnInit() {
-    this.userForm = this.fb.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      dob: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/
-          ),
+    this.userForm = this.fb.group(
+      {
+        firstname: ['', [Validators.required]],
+        lastname: ['', [Validators.required]],
+        dob: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(
+              /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/
+            ),
+          ],
         ],
-      ],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
+        email: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
+          ],
         ],
-      ],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]],
-    });
-    {
-      validator: MustMatch('password', 'confirmPassword')
-    }
+        password: ['', [Validators.required, Validators.minLength(8)]],
+        confirmPassword: ['', [Validators.required]],
+      },
+
+      {
+        validator: MustMatch('password', 'confirmPassword'),
+      }
+    );
   }
   // convenience getter for easy access to form fields
   get f() {
