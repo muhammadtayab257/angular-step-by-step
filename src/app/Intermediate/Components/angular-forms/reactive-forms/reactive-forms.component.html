@@ -139,16 +139,96 @@
             formControlName="firstname"
             class="form-control"
             placeholder="Name"
-            />
-            <div *ngIf="!f.firstname?.valid && (f.firstname.touched || f.firstname.dirty)">
-              <span class="text-danger"*ngIf="f.firstname.errors?.required">UserName Must Be Filled</span>
-            </div>
+            [ngClass]="{
+              'is-invalid': f.firstname.touched && f.firstname.errors?.required,
+              'is-valid': f.firstname.touched && f.firstname.valid
+            }"
+          />
+          <div
+            *ngIf="
+              !f.firstname?.valid && (f.firstname.touched || f.firstname.dirty)
+            "
+          >
+            <span class="text-danger" *ngIf="f.firstname.errors?.required"
+              >UserName Must Be Filled</span
+            >
+          </div>
         </div>
 
         <div class="form-group">
-          <button class="btn btn-danger" [disabled]="!userForm.valid">
-            Click Me
-          </button>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            formControlName="lastname"
+            class="form-control"
+            placeholder="Last Name"
+            [ngClass]="{
+              'is-invalid': f.lastname.touched && f.lastname.errors?.required,
+              'is-valid': f.lastname.touched && f.lastname.valid
+            }"
+          />
+          <div
+            *ngIf="
+              !f.lastname?.valid && (f.lastname.touched || f.lastname.dirty)
+            "
+          >
+            <span class="text-danger" *ngIf="f.lastname.errors?.required"
+              >LastName Must Be Filled</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            [ngClass]="{
+              'is-invalid':
+                f.dob.touched &&
+                f.dob.errors?.required &&
+                f.dob.errors?.pattern,
+              'is-valid': f.dob.touched && f.dob.valid
+            }"
+            type="date"
+            id="dob"
+            name="dob"
+            formControlName="dob"
+            class="form-control"
+            placeholder="Email"
+          />
+          <div *ngIf="!f.dob?.valid && (f.dob.touched || f.dob.dirty)">
+            <span class="text-danger" *ngIf="f.dob.errors?.required"
+              >Date Of Birth Must Be Valid</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            [ngClass]="{
+              'is-invalid':
+                f.email.touched &&
+                f.email.errors?.required &&
+                f.email.errors?.pattern,
+              'is-valid': f.email.touched && f.email.valid
+            }"
+            type="email"
+            id="email"
+            name="email"
+            formControlName="email"
+            class="form-control"
+          />
+          <div *ngIf="!f.email?.valid && (f.email.touched || f.email.dirty)">
+            <span class="text-danger" *ngIf="f.email.errors?.required"
+              >Email Is Required</span
+            >
+            <span class="text-danger" *ngIf="f.email.errors?.pattern"
+              >Email Must Be Valid</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-danger">Click Me</button>
         </div>
         <b>valid : </b>{{ userForm.valid }}
       </form>

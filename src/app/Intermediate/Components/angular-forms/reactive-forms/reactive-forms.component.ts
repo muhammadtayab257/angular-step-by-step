@@ -17,6 +17,23 @@ export class ReactiveFormsComponent implements OnInit {
   ngOnInit() {
     this.userForm = this.fb.group({
       firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      dob: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(
+            /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/
+          ),
+        ],
+      ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
+        ],
+      ],
     });
   }
   // convenience getter for easy access to form fields
