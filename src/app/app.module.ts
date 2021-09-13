@@ -15,6 +15,7 @@ import { ComponentLifeCycleHookComponent } from './Intermediate/Components/compo
 import { AngularFormsComponent } from './Intermediate/Components/angular-forms/angular-forms.component';
 import { TemplateDrivenFormsComponent } from './Intermediate/Components/angular-forms/template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './Intermediate/Components/angular-forms/reactive-forms/reactive-forms.component';
+import { NestedFormsComponent } from './Intermediate/Components/angular-forms/nested-forms/nested-forms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { ReactiveFormsComponent } from './Intermediate/Components/angular-forms/
     AngularFormsComponent,
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
+    NestedFormsComponent,
   ],
   imports: [
     BrowserModule,

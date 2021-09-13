@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { MustMatch } from '../../../../Shared/Validators/must-match.validator';
 
@@ -9,9 +9,10 @@ import { MustMatch } from '../../../../Shared/Validators/must-match.validator';
   styleUrls: ['./reactive-forms.component.css'],
 })
 export class ReactiveFormsComponent implements OnInit {
+  constructor(private fb: FormBuilder) { }
   userForm!: FormGroup;
+  simpleFormArray!: FormGroup;
   defaultForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
 
   onSubmit() {
     console.warn(this.userForm.value);
@@ -52,6 +53,23 @@ export class ReactiveFormsComponent implements OnInit {
       defaultEmail: ['', Validators.required],
     });
     this.setDefault();
+
+
+    // FORM ARRAY SIMPLE EXAMPLE
+
+    this.simpleFormArray = this.fb.group({
+      name: ['', Validators.required],
+      hobbies: ['', Validators.required],
+      formArrayitems: this.fb.array([
+        this.fb.group({
+          itemId: ['1'],
+          itemName: ['1'],
+          itemDesc: ['1'],
+          itemDone: ['1'],
+        })
+      ])
+    })
+
   }
   setDefault() {
     let defaultValues = {
