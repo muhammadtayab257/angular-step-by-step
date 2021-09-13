@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { MustMatch } from '../../../../Shared/Validators/must-match.validator';
+
 @Component({
   selector: 'app-reactive-forms',
   templateUrl: './reactive-forms.component.html',
@@ -9,13 +10,14 @@ import { MustMatch } from '../../../../Shared/Validators/must-match.validator';
 })
 export class ReactiveFormsComponent implements OnInit {
   userForm!: FormGroup;
-  submitted = false;
+  defaultForm!: FormGroup;
   constructor(private fb: FormBuilder) {}
 
   onSubmit() {
     console.warn(this.userForm.value);
   }
   ngOnInit() {
+    //
     this.userForm = this.fb.group(
       {
         firstname: ['', [Validators.required]],
@@ -41,10 +43,25 @@ export class ReactiveFormsComponent implements OnInit {
       },
 
       {
-        validator: MustMatch('password', 'confirmPassword'),
+        validator: MustMatch('', 'confirmPassword'),
       }
     );
+    // Default Value For Form
+    this.defaultForm = this.fb.group({
+      defaultName: ['', Validators.required],
+      defaultEmail: ['', Validators.required],
+    });
+    this.setDefault();
   }
+  setDefault() {
+    let defaultValues = {
+      defaultName: 'Default Name',
+      defaultEmail: 'Default Email',
+    };
+
+    this.defaultForm.setValue(defaultValues);
+  }
+
   // convenience getter for easy access to form fields
   get f() {
     return this.userForm.controls;
