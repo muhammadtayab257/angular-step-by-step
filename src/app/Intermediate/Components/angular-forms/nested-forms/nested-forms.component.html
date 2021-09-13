@@ -15,28 +15,28 @@
   <!-- main form -->
   <div class="row justify-content-center">
     <div class="col-md-10">
-      <form action="" style="width: 100%">
+      <form [formGroup]="nestedForm" style="width: 100%">
         <div class="col">
           <!-- personal info -->
           <div class="row">
             <div class="col-6">
               <div class="form-group">
                 <label for="fnText">First Name</label>
-                <input type="text" class="form-control" placeholder="First" />
+                <input formControlName="firstName" type="text" class="form-control" placeholder="First" />
               </div>
             </div>
             <div class="col-6">
               <div class="form-group">
                 <label for="lnText">Last Name</label>
-                <input type="text" class="form-control" />
+                <input formControlName="lastName" type="text" class="form-control" />
               </div>
             </div>
             <div class="col-12">
               <div>
                 <label for="" class="form-label">Favourite Food</label>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" />
+              <div class="form-check form-check-inline" >
+                <input class="form-check-input" formControlName="favFruits" type="checkbox" />
               </div>
             </div>
           </div>
