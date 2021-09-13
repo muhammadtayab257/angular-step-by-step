@@ -55,21 +55,6 @@ export class ReactiveFormsComponent implements OnInit {
     this.setDefault();
 
 
-    // FORM ARRAY SIMPLE EXAMPLE
-
-    this.simpleFormArray = this.fb.group({
-      name: ['', Validators.required],
-      hobbies: ['', Validators.required],
-      formArrayitems: this.fb.array([
-        this.fb.group({
-          itemId: ['1'],
-          itemName: ['1'],
-          itemDesc: ['1'],
-          itemDone: ['1'],
-        })
-      ])
-    })
-
   }
   setDefault() {
     let defaultValues = {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,10 @@ import { AngularFormsComponent } from './Intermediate/Components/angular-forms/a
 import { TemplateDrivenFormsComponent } from './Intermediate/Components/angular-forms/template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './Intermediate/Components/angular-forms/reactive-forms/reactive-forms.component';
 import { NestedFormsComponent } from './Intermediate/Components/angular-forms/nested-forms/nested-forms.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavComponent } from './Ui/nav/nav.component';
+import { FormsValidationsComponent } from './Intermediate/Components/angular-forms/forms-validations/forms-validations.component';
+import { ServicesDependencyInjectionComponent } from './Advance/services-dependency-injection/services-dependency-injection.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +36,17 @@ import { NestedFormsComponent } from './Intermediate/Components/angular-forms/ne
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
     NestedFormsComponent,
+    NavComponent,
+    FormsValidationsComponent,
+    ServicesDependencyInjectionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,8 @@ import {
   styleUrls: ['./nested-forms.component.css'],
 })
 export class NestedFormsComponent implements OnInit {
-  fruits: Array<string> = ['Mango', 'Grapes', 'Strawberry', 'Oranges'];
-  states: Array<string> = [
+  fruits: Array<String> = ['Mango', 'Grapes', 'Strawberry', 'Oranges'];
+  states: Array<String> = [
     'Sindh',
     'Kashmir',
     'Balochistan',
@@ -25,6 +25,7 @@ export class NestedFormsComponent implements OnInit {
   favFruitsError: Boolean = true;
   selectedFruitValues = [];
   nestedForm!: FormGroup;
+  productForm!: FormGroup;
   constructor(private _fb: FormBuilder) { }
 
   ngOnInit() {
@@ -34,29 +35,46 @@ export class NestedFormsComponent implements OnInit {
       favFruits: this.addFruitsControls(),
       address: this._fb.array([this.addAddressGroup()]),
     });
+
+    // PRODUCT FORM ADD ROW DYNAMICALLY
+    this.productForm = this._fb.group({
+      name: '',
+      quantities: this._fb.array([]),
+    });
   }
-  //
+
   addFruitsControls() {
     const arr = this.fruits.map((f) => {
-      return this._fb.control(true)
+      return this._fb.control(true);
     });
     return this._fb.array(arr);
   }
-  // Address Array
   addAddressGroup() {
     return this._fb.group({
-      primaryFlg: [],
       streetAddress: [null, Validators.required],
       city: [null, Validators.required],
       state: [null, Validators.required],
-      zipcode: [null, [Validators.required, Validators.pattern('^[0-9]{5}$')]]
+      zipcode: [null, [Validators.required, Validators.pattern('^[0-9]{5}$')]],
     });
   }
-
-
-  get fruitsArray() {
-    return <FormArray>this.nestedForm.get('favFruits')
+  get fruitsArray(): FormArray {
+    return this.nestedForm.get('favFruits') as FormArray;
+  }
+  quantities(): FormArray {
+    return this.productForm.get('quantities') as FormArray;
   }
 
+  newQuantity(): FormGroup {
+    return this._fb.group({
+      qty: '',
+      price: '',
+    });
+  }
+  addQuantity() {
+    this.quantities().push(this.newQuantity())
+  }
 
+  removeQuantity(i: any) {
+    this.quantities().removeAt(i);
+   }
 }

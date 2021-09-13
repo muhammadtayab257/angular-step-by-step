@@ -1,11 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+:root {
+  /* Colors */
+  --foreground-default: #08090a;
+  --foreground-secondary: #41474d;
+  --foreground-tertiary: #797c80;
+  --foreground-quaternary: #f4faff;
+  --foreground-light: #41474d;
+  --background-default: #f4faff;
+  --background-secondary: #a3b9cc;
+  --background-tertiary: #5c7d99;
+  --background-light: #ffffff;
+  --primary-default: #5dfdcb;
+  --primary-dark: #24b286;
+  --primary-light: #b2ffe7;
+  --error-default: #ef3e36;
+  --error-dark: #800600;
+  --error-light: #ffcecc;
+  /* Shadows */
+  --background-tertiary-shadow: 0 1px 3px 0 rgba(92, 125, 153, 0.5);
+}
+
 body {
   margin: 15px;
   padding: 15px;
-  background-color: #EDF5FE;
+  background: var(--background-default);
 }
 
+.container, .container-fluid{
+  background-color: #fff;
+}
+
+
 .text-center {
-  text-align: center
+  text-align: center;
 }
 
 .w-75 {
@@ -13,9 +41,9 @@ body {
 }
 
 span.text-danger {
-  color: red!important;
+  color: red !important;
   font-size: 12px;
-  letter-spacing: .5px
+  letter-spacing: 0.5px;
 }
 
 .form-group {
@@ -24,10 +52,30 @@ span.text-danger {
 
 .form-control {
   border-radius: 2px;
-  padding: 8px 10px
+  padding: 8px 10px;
 }
 
 .form-control:focus {
   box-shadow: 0 0 0 0;
   border: 1px solid rgb(143, 143, 143);
+}
+
+.btn.btn.btn-primary {
+  background-color: blue !important;
+}
+
+.btn.btn.btn-danger {
+  background-color: red !important;
+}
+
+.form-control {
+  border: 1px solid #ced4da !important;
+}
+
+.table-bordered {
+  border: 1px solid #ced4da !important;
+}
+
+#remove {
+  margin-top: 21px;
 }

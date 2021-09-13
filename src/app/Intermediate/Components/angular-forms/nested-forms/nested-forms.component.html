@@ -1,4 +1,4 @@
-<div class="container bg-white py-3">
+<div class="container py-3">
   <!-- Angular FormArray Example -->
   <h1 class="text-center">Angular FormArray Example</h1>
   <h4 class="mt-4">What is FormArray</h4>
@@ -22,73 +22,52 @@
             <div class="col-6">
               <div class="form-group">
                 <label for="fnText">First Name</label>
-                <input formControlName="firstName" type="text" class="form-control" placeholder="First" />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First"
+                  formControlName="firstName"
+                />
               </div>
             </div>
             <div class="col-6">
               <div class="form-group">
                 <label for="lnText">Last Name</label>
-                <input formControlName="lastName" type="text" class="form-control" />
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="lastName"
+                />
               </div>
             </div>
             <div class="col-12">
               <div>
                 <label for="" class="form-label">Favourite Food</label>
               </div>
-              <div class="form-check form-check-inline" >
-                <input class="form-check-input" formControlName="favFruits" type="checkbox" />
+              <div
+                class="form-check form-check-inline"
+                *ngFor="let control of fruitsArray.controls; let i = index"
+              >
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox{{ i }}"
+                />
+                <label class="form-check-label" for="inlineCheckbox{{ i }}">{{
+                  fruits[i]
+                }}</label>
               </div>
             </div>
           </div>
-
-          <!-- seperator -->
-          <div class="row">
-            <div class="col">
-              <hr />
-            </div>
-          </div>
-
           <!-- address form portion -->
           <div class="row" formArrayName="address">
             <div class="col-12">
               <div class="row">
                 <div class="col-12">
-                  <div class="row">
-                    <div class="col-8">
-                      <h4>Address</h4>
-                    </div>
-                    <div class="col-4 control-buttons">
-                      <img src="/assets/icons/add.svg" alt="" />
-                      <img
-                        src="/assets/icons/remove.svg"
-                        alt=""
-                        width="24"
-                        height="24"
-                      />
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <div class="col-12" style="margin-bottom: 1rem">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      formControlName="primaryFlg"
-                      type="checkbox"
-                      value=""
-                      id="defaultCheck1"
-                    />
-                    <label class="form-check-label" for="defaultCheck1">
-                      Is Primary Address
-                    </label>
-                  </div>
-                </div>
-                <div class="col-12">
                   <div class="form-group">
                     <label for="addText">Street Address</label>
                     <input
                       type="text"
-                      formControlName="streetAddress"
                       class="form-control"
                       id="addText"
                       placeholder="Enter street address"
@@ -125,7 +104,6 @@
                         <label for="zipcode">Zip Code</label>
                         <input
                           type="text"
-                          formControlName="zipcode"
                           placeholder="Enter city"
                           class="form-control"
                         />
@@ -136,15 +114,6 @@
               </div>
             </div>
           </div>
-
-          <!-- seperator -->
-          <div class="row">
-            <div class="col">
-              <hr />
-            </div>
-          </div>
-
-          <!-- final action buttons -->
           <div class="row justify-content-center">
             <div class="col-2">
               <button type="button" class="btn btn-primary">Submit</button>
@@ -153,5 +122,59 @@
         </div>
       </form>
     </div>
+  </div>
+
+  <!-- Add New Dynamic Row In Form Array -->
+
+  <div class="container">
+    <h2 class="my-4">Angular FormArray Example - ItSolutionStuff.com</h2>
+
+    <form [formGroup]="productForm">
+      <p>
+        <label for="name">Product Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          formControlName="name"
+          class="form-control"
+        />
+      </p>
+
+      <table class="table table-responsive table-borderless " formArrayName="quantities">
+        <tr>
+          <th colspan="2">Add Multiple Quantity:</th>
+          <th width="150px">
+            <button
+              type="button"
+              (click)="addQuantity()"
+              class="btn btn-primary"
+            >
+              Add More
+            </button>
+          </th>
+        </tr>
+        <tr *ngFor="let quantity of quantities().controls; let i=index" >
+          <td>
+            Quantity :
+            <input type="text" formControlName="qty" class="form-control" />
+          </td>
+          <td>
+            Price:
+            <input type="text" formControlName="price" class="form-control" />
+          </td>
+          <td>
+            <button (click)="removeQuantity(i)" class="btn btn-danger" id="remove">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </table>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
+    <br />
+    {{ this.productForm.value | json }}
   </div>
 </div>
