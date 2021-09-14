@@ -21,6 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavComponent } from './Ui/nav/nav.component';
 import { FormsValidationsComponent } from './Intermediate/Components/angular-forms/forms-validations/forms-validations.component';
 import { ServicesDependencyInjectionComponent } from './Advance/services-dependency-injection/services-dependency-injection.component';
+import { ServicesPushApproachComponent } from './Advance/services-push-approach/services-push-approach.component';
+import { HttpComponent } from './Advance/http/http.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,8 @@ import { ServicesDependencyInjectionComponent } from './Advance/services-depende
     NavComponent,
     FormsValidationsComponent,
     ServicesDependencyInjectionComponent,
+    ServicesPushApproachComponent,
+    HttpComponent,
   ],
   imports: [
     BrowserModule,

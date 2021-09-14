@@ -12,8 +12,8 @@ export class FirstServiceService {
   constructor(private httpClient: HttpClient) { }
 
 
-  public sendGetRequest(): Observable<UserTwo> {
-    return this.httpClient.get<UserTwo>(this.api);
+  public sendGetRequest(): Observable<UserTwo[]> {
+    return this.httpClient.get<UserTwo[]>(this.api);
   }
 
 }

@@ -7,11 +7,12 @@ import { UserTwo } from '../../Shared/Interfaces/UserTwo';
   styleUrls: ['./services-dependency-injection.component.css'],
 })
 export class ServicesDependencyInjectionComponent implements OnInit {
-  constructor(private firstService: FirstServiceService) {}
-  SimpleService: any;
+  constructor(private firstService: FirstServiceService) { }
+  SimpleService: UserTwo[] = [];
+  // SimpleService: any;
 
   ngOnInit(): void {
-    this.firstService.sendGetRequest().subscribe((data) => {
+    this.firstService.sendGetRequest().subscribe((data: UserTwo[]) => {
       this.SimpleService = data;
     });
   }
