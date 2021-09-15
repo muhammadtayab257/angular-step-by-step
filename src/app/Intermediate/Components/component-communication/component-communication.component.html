@@ -1,8 +1,0 @@
-<h1 class="text-center">Exchanging data from parent component to child component</h1>
-<h2>Parent Component</h2>
-<ul *ngFor="let food of foodArray">
-  <li>{{food}}</li>
-</ul>
-<hr>
-
-<app-child (foodEvt)="addTofood($event)"></app-child>
