@@ -18,11 +18,11 @@ import { TemplateDrivenFormsComponent } from './Intermediate/Components/angular-
 import { ReactiveFormsComponent } from './Intermediate/Components/angular-forms/reactive-forms/reactive-forms.component';
 import { NestedFormsComponent } from './Intermediate/Components/angular-forms/nested-forms/nested-forms.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NavComponent } from './Ui/nav/nav.component';
 import { FormsValidationsComponent } from './Intermediate/Components/angular-forms/forms-validations/forms-validations.component';
 import { ServicesDependencyInjectionComponent } from './Advance/services-dependency-injection/services-dependency-injection.component';
 import { ServicesPushApproachComponent } from './Advance/services-push-approach/services-push-approach.component';
 import { HttpComponent } from './Advance/http/http.component';
+import { RoutingRelatedModule } from './Advance/routing-related-module/routing-related-module.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,6 @@ import { HttpComponent } from './Advance/http/http.component';
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
     NestedFormsComponent,
-    NavComponent,
     FormsValidationsComponent,
     ServicesDependencyInjectionComponent,
     ServicesPushApproachComponent,
@@ -50,7 +49,8 @@ import { HttpComponent } from './Advance/http/http.component';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingRelatedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

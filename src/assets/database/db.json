@@ -1,0 +1,164 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 2,
+      "productName": "Red Shirt",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/6_5_5_65_400x.jpg?v=1628511815",
+      "is_available": true,
+      "colors": "red",
+      "reviews": 120
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "productName": "Green Shirt",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/DSC_0581_1_02346124-f7b5-466c-8b78-e19e6fe60637_400x.jpg?v=1628511811",
+      "is_available": true,
+      "colors": "gray",
+      "reviews": 120
+    },
+    {
+      "id": 3,
+      "categoryId": 2,
+      "productName": "Denim Jeans",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/Untitled-6_0d883b05-1aeb-4475-82d6-93baa7b46500_400x.jpg?v=1628511778",
+      "is_available": true,
+      "colors": "blue",
+      "reviews": 120
+    },
+    {
+      "id": 4,
+      "categoryId": 2,
+      "productName": "Face Cream",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/chsmpsgr_400x.jpg?v=1622894419",
+      "is_available": true,
+      "colors": "red",
+      "reviews": 120
+    },
+    {
+      "id": 5,
+      "categoryId": 2,
+      "productName": "Child Wear",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/2a1fd_400x.jpg?v=1622451809",
+      "is_available": true,
+      "colors": "darkblue",
+      "reviews": 120
+    },
+    {
+      "id": 6,
+      "categoryId": 2,
+      "productName": "Blue Shirt",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/Untitled-14_f6dd97fe-a789-4e03-bb07-147eb1a2e220_400x.jpg?v=1626267121",
+      "is_available": true,
+      "colors": "blue",
+      "reviews": 120
+    },
+    {
+      "id": 7,
+      "categoryId": 2,
+      "productName": "White Shirt",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/Untitled-7-Recovered_400x.jpg?v=1626346806",
+      "is_available": true,
+      "colors": "white",
+      "reviews": 120
+    },
+    {
+      "id": 8,
+      "categoryId": 2,
+      "productName": "Blue Shirt",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/6346464_d0b53194-1a68-43af-95f8-ef2ca5fe0a87_400x.jpg?v=1628494708",
+      "is_available": true,
+      "colors": "blue",
+      "reviews": 120
+    },
+    {
+      "id": 9,
+      "categoryId": 2,
+      "productName": "Blue Shirt",
+      "description": "This Is Product description",
+      "rating": 12,
+      "price": 1030,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/26asg_400x.jpg?v=1628526580",
+      "is_available": true,
+      "colors": "blue",
+      "reviews": 120
+    },
+    {
+      "id": 10,
+      "categoryId": 1,
+      "productName": "Test Product",
+      "description": "Test Data Upload",
+      "rating": "1",
+      "productImage": "https://media.istockphoto.com/photos/pakistan-monument-islamabad-picture-id535695503?k=6&m=535695503&s=612x612&w=0&h=uP8aDK4xlfjk3kEiyr9wwUiuh80UwAiICweFpiBDosk=",
+      "isAvailable": "1",
+      "color": "red",
+      "reviews": "120"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Polo Shirts"
+    },
+    {
+      "id": 2,
+      "name": "T-Shirts"
+    },
+    {
+      "id": 3,
+      "name": "Tablets"
+    },
+    {
+      "id": 4,
+      "name": "Men's Wear"
+    },
+    {
+      "id": 5,
+      "name": "Women's Wear"
+    },
+    {
+      "id": 6,
+      "name": "Casual"
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "productImageUrl": "https://cdn.shopify.com/s/files/1/0671/0621/products/6346464_d0b53194-1a68-43af-95f8-ef2ca5fe0a87_400x.jpg?v=1628494708"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ]
+}
