@@ -10,7 +10,10 @@ import { ParentComponent } from './Easy-Topics/Components-Interactions/parent/pa
 import { ChildComponent } from './Easy-Topics/Components-Interactions/parent/child/child.component';
 import { DataBindingsComponent } from './Easy-Topics/data-bindings/data-bindings.component';
 import { PropertyBindingsComponent } from './Easy-Topics/property-bindings/property-bindings.component';
-import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
+import { AngularDirectivesComponent } from './Easy-Topics/angular-directives/angular-directives.component';
+import { LifeCycleHooksComponent } from './Easy-Topics/life-cycle-hooks/life-cycle-hooks.component';
+import { PromisesComponent } from './Hard-Topics/Rxjs/promises/promises.component';
+import { AsyncAwaitComponent } from './Hard-Topics/Rxjs/async-await/async-await.component';
 
 
 
@@ -24,6 +27,9 @@ import { AngularDirectivesComponent } from './angular-directives/angular-directi
     DataBindingsComponent,
     PropertyBindingsComponent,
     AngularDirectivesComponent,
+    LifeCycleHooksComponent,
+    PromisesComponent,
+    AsyncAwaitComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +40,9 @@ import { AngularDirectivesComponent } from './angular-directives/angular-directi
     HomeComponent,
     ParentComponent,
     ChildComponent,
-    DataBindingsComponent
+    DataBindingsComponent,
+    PromisesComponent,
+    AsyncAwaitComponent
   ],
 })
 export class ComponentsModule { }
