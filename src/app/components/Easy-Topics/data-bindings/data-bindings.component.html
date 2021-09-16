@@ -1,1 +1,38 @@
-<p>data-bindings works!</p>
+<div class="container my-5 p3">
+  <h2 class="text-center">How to use data bindings in angular</h2>
+
+  <div class="row">
+    <div class="col-md-8">
+      <!--Simple Data Binding Using  interpolation  -->
+      <div class="my-3">
+        <h6 class="">Simple Data Binding Using interpolation</h6>
+        <span class="text-muted">{{ name }}</span>
+      </div>
+      <!-- Binding to events -->
+      <div class="my-3">
+        <button class="btn btn-primary" (click)="onButtonClicked($event)">
+          Change Name
+        </button>
+      </div>
+      <!-- two-way data binding in angular -->
+      <div class="my-3">
+        <h6>Two Way data binding in angular</h6>
+        <p>
+          Out of the box, two-way data binding is pretty rare in angular. But
+          there is one commonly used directive that makes two-way data binding
+          possible. This directive is called ngModel.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Name"
+              [(ngModel)]="firstName"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

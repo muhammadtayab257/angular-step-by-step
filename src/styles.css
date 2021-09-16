@@ -29,7 +29,7 @@
   --first_color_alt: #048654;
   --title_color: #393939;
   --text_color: #707070;
-  --text_color_light: #a6a6a6;
+  --text_color_light: #615d5d;
   --body_color: #EDF5FE;
   --container_color: #ffff;
 }
@@ -55,7 +55,7 @@ body {
   padding:15px;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
   color: var(--title_color);
 }

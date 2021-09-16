@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class DataBindingsComponent implements OnInit {
 
   constructor() { }
+  name = `I'm Bindeded Through Interpolation`;
+  firstName:string = 'First Name';
+
+  onButtonClicked(evt: MouseEvent) {
+    this.name = `I'm Changed Through Click Event`;
+    console.log(evt);
+
+  }
 
   ngOnInit(): void {
   }

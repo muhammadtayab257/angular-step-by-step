@@ -9,6 +9,8 @@ import { FooterComponent } from './Shared-Ui/footer/footer.component';
 import { ParentComponent } from './Easy-Topics/Components-Interactions/parent/parent.component';
 import { ChildComponent } from './Easy-Topics/Components-Interactions/parent/child/child.component';
 import { DataBindingsComponent } from './Easy-Topics/data-bindings/data-bindings.component';
+import { PropertyBindingsComponent } from './Easy-Topics/property-bindings/property-bindings.component';
+import { AngularDirectivesComponent } from './angular-directives/angular-directives.component';
 
 
 
@@ -20,6 +22,8 @@ import { DataBindingsComponent } from './Easy-Topics/data-bindings/data-bindings
     ParentComponent,
     ChildComponent,
     DataBindingsComponent,
+    PropertyBindingsComponent,
+    AngularDirectivesComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,8 @@ import { DataBindingsComponent } from './Easy-Topics/data-bindings/data-bindings
     HeaderComponent,
     HomeComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    DataBindingsComponent
   ],
 })
 export class ComponentsModule { }
