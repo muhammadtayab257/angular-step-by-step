@@ -1,0 +1,42 @@
+<div class="container">
+  <h3 class="text-center py-4">
+    Components Interaction Child to Parent & Parent to Child
+  </h3>
+  <div class="row">
+    <div class="col-md-6">
+      <h5>Parent Component</h5>
+      <button class="btn btn-danger my-3" (click)="changeLoginStatus()">
+        Change Status
+      </button>
+      <!-- Another Example -->
+      <h5 class="my-5">Another Example Of parent to child data transfer</h5>
+
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control my-3"
+            [(ngModel)]="userName"
+            name="userName"
+            placeholder="Enter UserName Here"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control my-3"
+            ngModel=""
+            placeholder="Enter Phone Number Here"
+            [(ngModel)]="userPhone"
+            name="userPhone"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-child
+    [logedIn]="userLogedIn"
+    userNameFromParent="{{ userName }}"
+    userPhoneFromParent="{{ userPhone }}"
+  ></app-child>
+</div>

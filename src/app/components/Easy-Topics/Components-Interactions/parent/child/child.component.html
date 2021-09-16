@@ -1,0 +1,10 @@
+<h5 class="mt-4">Child Component</h5>
+
+<article>
+  <span *ngIf="logedIn">Welcome Back</span>
+  <a href="#" *ngIf="!logedIn">Login </a>
+</article>
+<article>
+  <h5>{{ userNameFromParent }}</h5>
+  <h5>{{ userPhoneFromParent }}</h5>
+</article>

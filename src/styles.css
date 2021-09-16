@@ -1,82 +1,91 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 :root {
-  /* Colors */
-  --foreground-default: #08090a;
-  --foreground-secondary: #41474d;
-  --foreground-tertiary: #797c80;
-  --foreground-quaternary: #f4faff;
-  --foreground-light: #41474d;
-  --background-default: #f4faff;
-  --background-secondary: #a3b9cc;
-  --background-tertiary: #5c7d99;
-  --background-light: #ffffff;
-  --primary-default: #5dfdcb;
-  --primary-dark: #24b286;
-  --primary-light: #b2ffe7;
-  --error-default: #ef3e36;
-  --error-dark: #800600;
-  --error-light: #ffcecc;
-  /* Shadows */
-  --background-tertiary-shadow: 0 1px 3px 0 rgba(92, 125, 153, 0.5);
+  /* Font sizes and weight */
+  --body_font: "Inconsolata", sans-serif;
+  --biggest_font_size: 2.25rem;
+  --h1_font_size: 1.5rem;
+  --h2_font_size: 1.25rem;
+  --h3_font_size: 1rem;
+  --normal_font_size: 0.183rem;
+  --small_font_size: 0.813rem;
+  --smaller_font_size: 0.75rem;
+  --font_medium: 500;
+  --font_semi_bold: 600;
+  --font_bold: 700;
+  /* z index */
+  --z_tooltip: 10;
+  --z_fixed: 100;
+  /* Margins */
+  --mb_1: 0.5rem;
+  --mb_2: 1rem;
+  --mb_3: 1.5rem;
+  --mb_4: 2rem;
+  --mb_5: 2.5rem;
+  --mb_6: 3rem;
+  /* colors */
+  --header_height: 3rem;
+  --first_color: #069c54;
+  --first_color_alt: #048654;
+  --title_color: #393939;
+  --text_color: #707070;
+  --text_color_light: #a6a6a6;
+  --body_color: #EDF5FE;
+  --container_color: #ffff;
+}
+
+/* Global Settings */
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: var(--body_font);
+  background-color: var(--body_color);
+  font-family: var(--body_font);
+}
+
+.container {
+  background-color: var(--container_color);
+  padding:15px;
+}
+
+h1, h2, h3, h4, h5 {
   margin: 0;
+  color: var(--title_color);
+}
+
+p {
+  color: var(--text_color_light);
+}
+
+ul {
   padding: 0;
-  box-sizing: border-box;
-  background: var(--background-default);
+  list-style-type: none;
 }
 
-.container, .container-fluid{
-  background-color: #fff;
+a, a:hover {
+  text-decoration: none;
 }
 
-
-.text-center {
-  text-align: center;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.w-75 {
-  width: 75%;
-}
-
-span.text-danger {
-  color: red !important;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-}
-
-.form-group {
-  margin: 20px 0px;
-}
-
-.form-control {
-  border-radius: 2px;
-  padding: 8px 10px;
-}
-
-.form-control:focus {
-  box-shadow: 0 0 0 0;
-  border: 1px solid rgb(143, 143, 143);
-}
-
-.btn.btn.btn-primary {
-  background-color: blue !important;
-}
-
-.btn.btn.btn-danger {
-  background-color: red !important;
-}
-
-.form-control {
-  border: 1px solid #ced4da !important;
-}
-
-.table-bordered {
-  border: 1px solid #ced4da !important;
-}
-
-#remove {
-  margin-top: 21px;
+@media screen and (max-width:786px) {
+  :root {
+    --biggest_font_size: 25px;
+    --h1_font_size: 22px;
+    --h2_font_size: 20rem;
+    --h3_font_size: 18rem;
+    --normal_font_size: 16;
+    --small_font_size: 15px;
+    --smaller_font_size: 12px;
+  }
 }
