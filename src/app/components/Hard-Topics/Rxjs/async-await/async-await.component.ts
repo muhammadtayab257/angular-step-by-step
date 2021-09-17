@@ -17,6 +17,7 @@ export class AsyncAwaitComponent implements OnInit {
       }, 3000)
 
     })
+
     const getData = async () => {
       let response = await promiseFunction;
       console.log(response);
