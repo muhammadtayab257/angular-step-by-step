@@ -5,13 +5,11 @@ import { PromisesComponent } from './Hard-Topics/Rxjs/promises/promises.componen
 import { AsyncAwaitComponent } from './Hard-Topics/Rxjs/async-await/async-await.component';
 import { ListComponent } from './Hard-Topics/Rxjs/list/list.component';
 import { FromEventComponent } from './Hard-Topics/Rxjs/from-event/from-event.component';
-import { DeleteAfterComponent } from './Hard-Topics/Rxjs/list/delete-after/delete-after.component';
 import { HomeComponent } from '../components/home/home.component'
 const routes: Routes = [
   { path: 'promise', component: PromisesComponent },
   { path: 'async-await', component: AsyncAwaitComponent },
   { path: 'from-event', component: FromEventComponent },
-  { path: 'delete', component: DeleteAfterComponent },
   { path: 'list', component: ListComponent },
 
 ];

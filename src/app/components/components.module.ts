@@ -15,7 +15,6 @@ import { PromisesComponent } from './Hard-Topics/Rxjs/promises/promises.componen
 import { AsyncAwaitComponent } from './Hard-Topics/Rxjs/async-await/async-await.component';
 import { FromEventComponent } from './Hard-Topics/Rxjs/from-event/from-event.component';
 import { ListComponent } from './Hard-Topics/Rxjs/list/list.component';
-import { DeleteAfterComponent } from './Hard-Topics/Rxjs/list/delete-after/delete-after.component';
 
 
 
@@ -32,7 +31,6 @@ import { DeleteAfterComponent } from './Hard-Topics/Rxjs/list/delete-after/delet
     AsyncAwaitComponent,
     FromEventComponent,
     ListComponent,
-    DeleteAfterComponent
   ],
   imports: [
     ComponentRoutingModule,
@@ -49,7 +47,6 @@ import { DeleteAfterComponent } from './Hard-Topics/Rxjs/list/delete-after/delet
     AsyncAwaitComponent,
     FromEventComponent,
     ListComponent,
-    DeleteAfterComponent,
     ComponentRoutingModule
   ],
 })
